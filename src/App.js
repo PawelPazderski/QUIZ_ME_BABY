@@ -1,7 +1,5 @@
 import React from 'react';
 
-import logo from './logo.svg';
-
 import Home from './components/Home';
 import Nav from './components/Nav';
 import {
@@ -16,10 +14,12 @@ function App() {
     <div className="App">
       <Router>
         <>
-            <Nav/>
+        <Nav/>
+
             <Switch>
               <Route exact path="/" component={Home}/>
             </Switch>
+
         </>
       </Router>
     </div>
