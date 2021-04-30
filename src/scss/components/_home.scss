@@ -1,7 +1,4 @@
 .home-container {
-    // background-color: lightblue;
-    // display: flex;
-    // position:relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -10,22 +7,20 @@
     height: 80vh;
     background-color: black;
     .logo-quiz {
-
+        transform: rotate(-2deg);
         background: url("/images/QUIZ_ME_logo.svg") no-repeat center/contain;
         height:100%;
         width:80%;
     }
+    
     a {
-        
-        // align-self: flex-end;
         text-decoration: none;
-        // background-color: $primary-green;
         border:2px solid $primary-green;
         color:$secondary-green;
         padding: 20px;
         border-radius: 2rem;
         font-family: "Mukta";
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
