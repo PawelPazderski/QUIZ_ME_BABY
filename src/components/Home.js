@@ -16,7 +16,11 @@ const Home = () => {
     <>
         <div className="home-container">
             <div className="logo-quiz"></div>
-            <NavLink exact to="/link1" activeClassName="active" className="startLink">Start</NavLink></div>
+            <NavLink 
+            exact to="/selectquiz" 
+            activeClassName="active" 
+            className="startLink">Start</NavLink>
+        </div>
         
     </>)
 }

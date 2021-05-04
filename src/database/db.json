@@ -7,13 +7,13 @@
         },
         {
             "id": 2,
-            "name": "Link1",
-            "link": "/link1"
+            "name": "QUIZ SELECT",
+            "link": "/selectquiz"
         },
         {
             "id": 3,
-            "name": "Link2",
-            "link": "/link2"
+            "name": "QUIZ",
+            "link": "/quiz"
         }
     ]
 }

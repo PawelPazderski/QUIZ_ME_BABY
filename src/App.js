@@ -2,6 +2,8 @@ import React from 'react';
 
 import Home from './components/Home';
 import Nav from './components/Nav';
+import Quiz from './components/Quiz';
+import Select from './components/Select';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +20,9 @@ function App() {
 
             <Switch>
               <Route exact path="/" component={Home}/>
+              <Route path="/selectquiz" component={Select}/>
+              {/* <Route path="/quiz" component={Quiz}/> */}
+              <Route path="/quiz" component={Quiz}/>
             </Switch>
 
         </>
