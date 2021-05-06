@@ -9,11 +9,6 @@
             "id": 2,
             "name": "QUIZ SELECT",
             "link": "/selectquiz"
-        },
-        {
-            "id": 3,
-            "name": "QUIZ",
-            "link": "/quiz"
         }
     ]
 }

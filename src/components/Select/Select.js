@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {NavLink} from 'react-router-dom'
+
+import Quiz from '../Quiz'
+
+// import {NavLink} from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -9,6 +12,7 @@ const Select = () => {
     const [category, setCategory] = useState("General Knowledge")
     const [level, setLevel] = useState("Easy")
     const [questions, setQuestions] = useState("5")
+    const [test, setTest] = useState(false)
 
     useEffect(()=>{
         fetch("https://opentdb.com/api_category.php")
@@ -17,12 +21,21 @@ const Select = () => {
             .then(categories => setCategories(categories.trivia_categories))
     },[])
 
+    const startQuiz = () => {
+        setTest(true)
+    }
 
+    const endQuiz = () => {
+        setTest(false)
+    }
 
     return (
         <>
+        {(test === false) ? (
         <div className="select-container">
         <div className="logo-quiz logo-quiz-small"></div>
+        
+        
         <Container>
                 
             <Row>
@@ -59,22 +72,11 @@ const Select = () => {
                 
             </Row>
         </Container>
-        <NavLink to={{
-                pathname: "/quiz",
-                quizProps: {
-                    level:{level},
-                    category: {category},
-                    questions: {questions},
-                    categories: {categories}
-                }
-            }} 
-            activeClassName="active" 
-            className="startLink"
-            >OK, let's go!
-            </NavLink>
-        </div>
         
-        
+            <button className="startLink" onClick={startQuiz}>OK, let's go!</button>
+            </div>
+            
+        ) : <Quiz handleClick={endQuiz} level={level} category= {category} questions= {questions} categories= {categories} />}
         </>
     )
 } 

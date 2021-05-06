@@ -17,12 +17,13 @@ function App() {
       <Router>
         <>
         <Nav/>
+        {/* <Quiz/> */}
 
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/selectquiz" component={Select}/>
               {/* <Route path="/quiz" component={Quiz}/> */}
-              <Route path="/quiz" component={Quiz}/>
+              {/* <Route path="/quiz" component={Quiz}/> */}
             </Switch>
 
         </>

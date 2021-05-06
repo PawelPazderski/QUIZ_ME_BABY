@@ -31,7 +31,8 @@
         margin-bottom: 2rem;
         max-width: 60%;
     }
-    a {
+    .startLink {
+        background-color: black;
         text-decoration: none;
         border:2px solid $primary-green;
         color:$secondary-green;
