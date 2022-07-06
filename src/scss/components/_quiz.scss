@@ -29,6 +29,8 @@
         color:white;
     }
     .answer-options {
+        display: flex;
+        flex-direction: column;
         font-size: 1.5rem;
         border:none;
         width:100%;
@@ -38,6 +40,7 @@
         background-color: black;
         color:white;
         margin-bottom:1rem;
+        padding: 0;
         .option-answer{
             width:100%;
             background-color: black;
@@ -47,7 +50,10 @@
                 color:$primary-yellow;
             }
             &:checked{
-                background-color: $primary-green;
+                background-color: $primary-green!important;
+            }
+            &:active {
+                background-color: none!important;
             }
             
         }
@@ -77,4 +83,8 @@
             transition: 0.3s;
         }
     }
+}
+
+.option-answer-choosen {
+    color:$primary-green;
 }

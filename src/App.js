@@ -6,7 +6,7 @@ import Quiz from './components/Quiz';
 import Select from './components/Select';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from 'react-router-dom'
 
@@ -19,12 +19,12 @@ function App() {
         {/* <Nav/> */}
         {/* <Quiz/> */}
 
-            <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/selectquiz" component={Select}/>
+            <Routes>
+              <Route exact path="/" element={<Home />}/>
+              <Route path="/selectquiz" element={<Select />}/>
               {/* <Route path="/quiz" component={Quiz}/> */}
               {/* <Route path="/quiz" component={Quiz}/> */}
-            </Switch>
+            </Routes>
 
         </>
       </Router>

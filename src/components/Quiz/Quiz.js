@@ -8,13 +8,6 @@ import Col from 'react-bootstrap/Col'
 
 const Quiz = ({endQuiz, level, questions, category, categories}) => {
 
-    // console.log(handleClick)
-    // console.log(level)
-    // console.log(questions)
-    // console.log(category)
-    // console.log(categories)
-    // quiz.forEach(q => q.choices.sort(() => Math.random() - .5));
-
     const [responseCode, setResponseCode] = useState(0)
     const [quiz, setQuiz] = useState([])
     const [ind, setInd] = useState(0)
@@ -27,11 +20,6 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
 
     const quizID = categories.filter(el => el.name === category)[0].id.toString()
 
-    // quiz.forEach(el=>{
-    //     el.answers = [el.correct_answer, ...el.incorrect_answers].sort(()=> Math.random() - .5)
-    // })
-    // console.log(quizID)
-    
 
     useEffect(()=>{
         fetch(`https://opentdb.com/api.php?amount=${questions}&category=${quizID}&difficulty=${level.toLowerCase()}&type=multiple`)
@@ -51,6 +39,11 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
         setStart(true)
         setRecord([])
     } 
+
+    const selectAnswer = (e) => {
+        setSelect([e.target.innerHTML])
+
+    }
 
     const finishQuiz = () => {
         if(select[0] === quiz[ind].correct_answer ) {
@@ -87,9 +80,7 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
     }
 
     return (
-        
         <>
-        {console.log(quiz)}
         <div className="main-quiz-container">
         {!finish && <Container className="quiz-container">
             <Row>
@@ -120,11 +111,19 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
                 <h2>{quiz[ind].question.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&oacute;/g, "ó").replace(/&iacute;/g,"í")}</h2>
                 <Row>
                     <Col xs={12} md={6}>
-                    <select className="answer-options" value={[select]} onChange={e => setSelect([e.target.value])} multiple="multiple">
+                    {/* <select className="answer-options" value={[select]} onChange={e => setSelect([e.target.value])} multiple="multiple">
                     {quiz[ind].answers.map((el, i)=> {
                         return <option className="option-answer" key={i}>{el.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&amp;/g, "&")}</option>
                     })}
-                </select>
+                    </select> */}
+                    <ul className="answer-options" value={[select]}>
+                    {quiz[ind].answers.map((el, i)=> {
+                        return <li 
+                                className={(select == el.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&amp;/g, "&")) ? "option-answer-choosen" : "option-answer"} 
+                                key={i} 
+                                onClick={selectAnswer}>{el.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&amp;/g, "&")}</li>
+                    })}
+                    </ul>
                     </Col>
                 </Row>
             </>

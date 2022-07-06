@@ -4,7 +4,7 @@ const Result = ({record, score, length, endQuiz}) => {
 
     const [details, setDetails] = useState(false)
 
-    console.log(record)
+    // console.log(record)
 
     const showDetails = () => {
         setDetails(true)
