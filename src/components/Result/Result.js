@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 const Result = ({record, score, length, endQuiz}) => {
 
@@ -38,8 +38,6 @@ const Result = ({record, score, length, endQuiz}) => {
                 <button className="btn-primary" onClick={endQuiz}>Back</button>
             </div>
         </div>
-           
-            
         </>
     )
 }
