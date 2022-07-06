@@ -1,0 +1,65 @@
+.main-quiz-container .btn-primary {
+    background-color: black;
+    text-decoration: none;
+    border:2px solid $primary-green;
+    color:$secondary-green;
+    padding: 20px;
+    border-radius: 2rem;
+    font-family: "Mukta";
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom:3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    &:hover{
+        border:2px solid $primary-green;
+        background-color: black;
+        color:$primary-yellow;
+        text-decoration: none;
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+}
+
+.quiz-results {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-family: "Kaushan Script", cursive;
+        font-size: 3rem;
+        margin-bottom:2rem;
+        color: $primary-yellow;
+    }
+    h3 {
+        margin-right:1rem;
+    }
+
+}
+
+.quiz-list {
+    height: 80%;
+    overflow: auto;
+    ul li {
+    color: white;
+}
+}
+
+.answers-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid $secondary-green;
+}
+
+.correct-answer {
+    color: $secondary-green;
+    margin-right: 1rem;
+}

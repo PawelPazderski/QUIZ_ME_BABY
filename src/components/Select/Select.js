@@ -33,7 +33,7 @@ const Select = () => {
         <>
         {(test === false) ? (
         <div className="select-container">
-        <div className="logo-quiz logo-quiz-small"></div>
+        <a href="/"><div className="logo-quiz logo-quiz-small"></div></a>
         
         
         <Container>
@@ -76,7 +76,7 @@ const Select = () => {
             <button className="startLink" onClick={startQuiz}>OK, let's go!</button>
             </div>
             
-        ) : <Quiz handleClick={endQuiz} level={level} category= {category} questions= {questions} categories= {categories} />}
+        ) : <Quiz endQuiz={endQuiz} level={level} category= {category} questions= {questions} categories= {categories} />}
         </>
     )
 } 
