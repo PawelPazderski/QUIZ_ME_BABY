@@ -9,9 +9,9 @@ const Home = () => {
         <div className="home-container">
             <div className="logo-quiz"></div>
             <NavLink 
-            exact to="/selectquiz" 
-            activeClassName="active" 
-            className="startLink">Start</NavLink>
+            to="/selectquiz" 
+            activeclassname="active" 
+            className="startLink startlink-pulse">Start</NavLink>
         </div>
         
     </>)

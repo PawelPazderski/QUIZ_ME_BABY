@@ -30,7 +30,21 @@
             text-decoration: none;
             transform: scale(1.05);
             transition: 0.3s;
+            animation-play-state: paused;
         }
     }
     
-  }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        }
+        to {
+        transform: scale(1.2);
+        }
+}
+
+.startlink-pulse {
+    animation: pulse 0.5s infinite alternate;
+}
