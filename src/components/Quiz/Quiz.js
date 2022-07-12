@@ -98,7 +98,7 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
 
             {!start && (
                 <>
-                <div>
+                <div className="start-buttons-container">
                     <button className="btn-primary" onClick={startQuiz}>Begin</button>
                     <button className="btn-primary" onClick={endQuiz}>Go back</button>
                 </div>

@@ -88,3 +88,12 @@
 .option-answer-choosen {
     color:$primary-green;
 }
+
+@media(max-width: 960px) {
+    .start-buttons-container,
+    .quiz-buttons {
+        display:flex;
+        flex-direction: column;
+    }
+}
+

@@ -72,7 +72,6 @@ const Select = () => {
         </Container>
         :
         <div>
-            {/* <Spinner animation="grow" variant="success" /> */}
             <Spinner animation="border" variant="success" />
         </div>
         

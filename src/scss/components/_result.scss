@@ -44,6 +44,9 @@
 .quiz-list {
     height: 80%;
     overflow: auto;
+    ul {
+        padding: 0;
+    }
     ul li {
     color: white;
 }
@@ -57,6 +60,7 @@
     width: fit-content;
     height: fit-content;
     border: 1px solid $secondary-green;
+    margin-right: 10px;
 }
 
 .correct-answer {
