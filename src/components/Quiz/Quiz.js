@@ -5,6 +5,7 @@ import Result from '../Result'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Spinner from 'react-bootstrap/Spinner'
 
 const Quiz = ({endQuiz, level, questions, category, categories}) => {
 
@@ -85,7 +86,8 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
         {!finish && <Container className="quiz-container">
             <Row>
                 <Col xs={12} md={8}>
-                <h3 style={{textAlign:"center"}}>Category: {category} / Level: {level}</h3>
+                <h3 style={{textAlign:"center"}}>Category: {category}</h3>
+                <h3 style={{textAlign:"center"}}>Level: {level}</h3>
                 </Col>
             </Row>
             {responseCode > 0 && (
@@ -95,8 +97,8 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
                 </>)}
             {responseCode === 0 && (
             <>
-
-            {!start && (
+            {!quiz.length && <Spinner animation="border" variant="success" />}
+            {(!start && quiz.length) && (
                 <>
                 <div className="start-buttons-container">
                     <button className="btn-primary" onClick={startQuiz}>Begin</button>
@@ -105,17 +107,12 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
                     
                 </>
             )}
-            {start && (
+            {(start && quiz.length) && (
             <>
                 <h2 className="question-number">#{ind+1}</h2>
                 <h2>{quiz[ind].question.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&oacute;/g, "ó").replace(/&iacute;/g,"í")}</h2>
                 <Row>
                     <Col xs={12} md={6}>
-                    {/* <select className="answer-options" value={[select]} onChange={e => setSelect([e.target.value])} multiple="multiple">
-                    {quiz[ind].answers.map((el, i)=> {
-                        return <option className="option-answer" key={i}>{el.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&shy;/g, "-").replace(/&amp;/g, "&")}</option>
-                    })}
-                    </select> */}
                     <ul className="answer-options" value={[select]}>
                     {quiz[ind].answers.map((el, i)=> {
                         return <li 
@@ -127,7 +124,8 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
                     </Col>
                 </Row>
             </>
-            )}
+            )
+            }
             <div className="quiz-buttons">
                 {(ind !== quiz.length - 1 && start) && <button className="btn-primary" onClick={nextQuestion}>Next</button>}
                 {(!showResult && start) && <button className="btn-primary" onClick={finishQuiz}>Finish</button>}
@@ -142,6 +140,7 @@ const Quiz = ({endQuiz, level, questions, category, categories}) => {
                 
             </>
             )}
+            
             </div>
         </>
     )
